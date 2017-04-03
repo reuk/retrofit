@@ -1,0 +1,15 @@
+branch: diffblue
+language: java
+buildCmd: cd retrofit; mvn compile
+testCmd: cd retrofit; mvn test
+reportFile: retrofit/coverage.xml
+timeout: 3600
+memout: 8000000000
+cbmcArguments: --java-max-input-array-length 9
+tool:
+  language: java
+  cbmcArguments: >-
+    --cover location --gen-java-test-case --java-disable-mocks
+    --assertions-as-assumptions --unwind 9 --java-max-input-array-length 9
+  timeout: 300
+  memout: 1000000000
